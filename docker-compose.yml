@@ -1,0 +1,29 @@
+#version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: news-aggregator-app-1
+    ports:
+      - "80:80"
+    networks:
+      - news_aggregator_network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: news-aggregator-db-1
+    environment:
+      MYSQL_DATABASE: news_aggregator
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    networks:
+      - news_aggregator_network
+
+networks:
+  news_aggregator_network:
+    driver: bridge
