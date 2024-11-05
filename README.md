@@ -41,7 +41,7 @@
   - Keyword: Search for articles containing specific words.
   - Date: Filter articles by publication date.
   - Category: Browse articles by their respective categories.
-  - Source: View articles from specific news sources.
+  - Source: View articles from specific news sources using the command - php artisan fetch:articles
 - Single Article Details: An endpoint is available to retrieve detailed information about a single article, enhancing user engagement with the content.
 
 3. User Preferences
